@@ -1,7 +1,14 @@
 package org.itstep;
 
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
-        // Пишите ваш код здесь
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.print(">>> ");
+            TypeCommand command = TypeCommand.convert(scanner.nextLine());
+            command.getCommand().execute();
+        }
     }
 }
